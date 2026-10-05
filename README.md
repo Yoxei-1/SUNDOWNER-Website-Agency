@@ -96,8 +96,6 @@ No stock photography.
 - JavaScript
 - Hash-based routing, so it deploys anywhere as a static site
 
-*(Update this list if the final build uses a framework or animation library.)*
-
 ---
 
 ## Run It
@@ -130,8 +128,6 @@ js/              # routing, cursor, transitions, canvas pieces
 images/          # art-directed imagery
 ```
 
-*(Adjust to match the actual folder layout.)*
-
 ---
 
 ## Notes
@@ -145,3 +141,8 @@ The concept, creative direction, design decisions and project requirements were 
 SUNDOWNER® was created as a personal web design and development experiment. It explores how typography, atmosphere, imagery and motion can combine into a website that feels like a designed experience rather than a conventional business site.
 
 **SUNDOWNER®** Websites worth stopping for.
+
+The brief, references and creative direction were mine. 
+The concept, visual system, imagery and code were generated with AI from that brief and refined through iteration.
+SUNDOWNER is a fictional studio created for portfolio purposes. 
+All names, clients, projects and people are invented, and the name is not a registered business or trademark.
