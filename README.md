@@ -1,7 +1,7 @@
-# SUNDOWNER®
+# SUNDOWNER
 ### Independent web design studio. Cape Town.
 
-SUNDOWNER® is a fictional web design studio and a concept study in what a studio website can feel like when the site itself is the portfolio.
+SUNDOWNER is a fictional web design studio and a concept study in what a studio website can feel like when the site itself is the portfolio.
 
 In South Africa, a *sundowner* is the evening ritual of stopping to watch golden hour. That is the whole brand: websites that feel like golden hour. Warm, sharp, and worth stopping for.
 
@@ -21,31 +21,30 @@ Rather than a standard agency layout, the design leans on oversized typography, 
 
 ## The Experience
 
-- **Preloader** with a counter that leads into an intro sequence
-- **Hero** with four stacked intro images, a cursor-following image trail and an oversized wordmark
-- **Marquee band** of scrolling text
-- **Statement section** revealed line by line
-- **Selected Work** as rich rows showing role, timeline, year and team, with a floating hover preview
-- **Services** as a numbered 01–04 index
+- **Preloader:** a 0 to 100 counter in giant display type while four intro images cycle in a tilted stack, then the curtain lifts as the hero begins, a handoff rather than a cut
+- **Hero:** an oversized wordmark over a four-layer image stack (each layer with its own entrance and parallax depth), a cursor-following image trail, and a live Cape Town clock in the header
+- **Marquee band** and a **manifesto** revealed line by line
+- **Selected Work** as rich rows showing index, title, role, timeline, year and team, with a floating cover preview that follows the cursor
+- **Services** as a numbered 01 to 04 index
 - **Stats strip** with count-up numbers
 - **Process** in five steps
-- **Testimonials** that rotate
-- **Art Lab** with three live canvas pieces: a flow field, a halftone sun and a grain study
-- **"Open the Door"** call to action, where the panels part on hover
-- **Footer** with a giant wordmark, a live Cape Town clock, a sitemap and a "Next page" teaser
+- **Testimonials** that rotate, plus a client wordmark marquee
+- **Art Lab** with three live pieces: a flow-field canvas, a hover-rising halftone sun, and a pure-CSS grain study
+- **"Open the Door"** call to action, where the panels part on hover to reveal the studio
+- **Footer** with a contextual next-page teaser, sitemap, live Cape Town clock, coordinates and a giant wordmark with an amber glow
 
 ### Pages
 
 | Page | What's there |
 |---|---|
 | Home | The full long-scroll experience above |
-| Work | A "Drag to Explore" horizontal carousel with physics, plus a full project index |
-| Projects (6) | Hero, metadata, parallax cover, challenge / approach / outcome, code-built device mockups, results, next-project teaser |
-| Studio | Manifesto, story, team, values, awards |
-| Services | Expanded deliverables, honest pricing notes, FAQ |
-| Contact | Validated form with budget pills, real error states and a friendly confirmation |
+| Work | A physics-based "Drag to Explore" carousel (momentum, rubber-banding, per-card parallax, progress line) plus a full typographic index |
+| Projects (6) | Metadata grid, parallax hero, challenge / fix / outcome, device mockups built in code, count-up results, client quote, next-project teaser |
+| Studio | Origin story, house rules, team rows with hover plates, awards |
+| Services | Four services with prices, a care-plan strip and an animated FAQ |
+| Contact | Validated form with budget pills, live error messages and a friendly confirmation, plus an availability card and clocks |
 
-Shared across every page: an overlay menu, a custom cursor, a film-grain overlay, smooth scrolling and page-wipe transitions.
+Shared across every page: an overlay menu, a custom cursor with VIEW, DRAG and link modes, page-wipe transitions, smooth scrolling and a film-grain overlay.
 
 ---
 
@@ -63,9 +62,9 @@ Shared across every page: an overlay menu, a custom cursor, a film-grain overlay
 
 **Typography**
 
-- **Fraunces**: oversized display serif, with italics as the accent
-- **Archivo**: interface and body text
-- **Space Mono**: metadata labels, indices and clocks, styled like museum captions
+- **Fraunces:** oversized display serif, with italics as the accent
+- **Archivo:** interface and body text
+- **Space Mono:** metadata labels, indices and clocks, styled like museum captions
 
 **Principles**
 
@@ -74,16 +73,21 @@ Shared across every page: an overlay menu, a custom cursor, a film-grain overlay
 - Hairline dividers and generous negative space
 - Motion with intent: reveals, parallax, hover states with character
 - Responsive layouts designed for mobile on purpose, not just squeezed down
-- Respects `prefers-reduced-motion`
+
+**Accessibility and performance**
+
+- Semantic HTML, visible focus states, a skip link and alt text on images
+- Reduced-motion fallbacks for animation and smooth scrolling
+- Lazy loading for images below the fold
 
 ---
 
 ## Imagery
 
-The site uses 22 original images made specifically for it, all in the same visual language: medium-format film look, heavy grain, chiaroscuro, a single amber light source.
+The site uses 10 AI-generated photographs plus artwork built in code. Everything shares one visual language: medium-format film look, heavy grain, chiaroscuro, a single amber light source against near-black.
 
-- **10 AI-generated photographic images:** the intro and hero set, plus six project covers (fintech, skincare, architecture, vinyl label, provisions brand, boutique hotel)
-- **12 hand-built code artworks:** textures, the three Art Lab canvases, device mockups, divider asterisks, the grain overlay, favicon and topographic line work, built with SVG, canvas and CSS
+- **10 AI-generated photographs:** four intro and hero images, plus six project covers (fintech, skincare, architecture, vinyl label, provisions brand, boutique hotel)
+- **Code-built artwork:** textures, the three Art Lab pieces, the device mockups on each project page (dashboard chart, commerce grid, record player, hotel booking card), SVG divider asterisks and the grain overlay
 
 No stock photography.
 
@@ -91,58 +95,53 @@ No stock photography.
 
 ## Built With
 
-- HTML
+- React
+- GSAP (animation, scroll-driven motion, page transitions)
+- Lenis (smooth scrolling)
 - CSS
-- JavaScript
-- Hash-based routing, so it deploys anywhere as a static site
+- Hash-based routing, so it works as a static site on any host
 
 ---
 
 ## Run It
 
 ```
-Open index.html in your browser
+npm install
+npm run dev
 ```
 
-Or serve it locally:
+## Build / Deploy
 
 ```
-npx serve .
+npm run build
 ```
 
-## Deploy
+The build is a fully static site.
 
-The site is fully static, so any static host works:
-
-- **Netlify / Vercel:** drag the project folder in, or connect the repo. No build step needed.
-- **GitHub Pages:** works as-is. Because routing is hash-based, no subpath configuration is needed.
+- **Netlify:** drag the build output folder in, or connect the repo.
+- **Vercel / GitHub Pages:** connect the repo. Routing is hash-based, so no server rewrites are needed.
 
 ---
 
 ## Structure
 
 ```
-index.html
-css/             # design system, layout, motion
-js/              # routing, cursor, transitions, canvas pieces
-images/          # art-directed imagery
+src/             # components, pages, animation and routing logic
+public/images/   # art-directed photographs
 ```
 
 ---
 
 ## Notes
 
-All photographic imagery in `images/` was AI-generated for this concept. The remaining artwork was built in code. AI tooling assisted during development.
+The photographs in `images/` were AI-generated for this concept. The remaining artwork was built in code. AI tooling generated the site's concept, visual system and code during development.
 
-The concept, creative direction, design decisions and project requirements were developed by me, with AI used as a design and development tool.
+The brief, references and creative direction were mine: a web design studio site in the spirit of two reference sites, with at least 20 original images and a high bar for polish. The studio name, palette, typography and build were generated with AI from that brief and refined through iteration.
 
 ## Project Purpose
 
-SUNDOWNER® was created as a personal web design and development experiment. It explores how typography, atmosphere, imagery and motion can combine into a website that feels like a designed experience rather than a conventional business site.
+SUNDOWNER was created as a personal web design and development experiment. It explores how typography, atmosphere, imagery and motion can combine into a website that feels like a designed experience rather than a conventional business site.
 
-**SUNDOWNER®** Websites worth stopping for.
+SUNDOWNER is a fictional studio created for portfolio purposes. All names, clients, projects and people are invented, and the name is not a registered business or trademark.
 
-The brief, references and creative direction were mine. 
-The concept, visual system, imagery and code were generated with AI from that brief and refined through iteration.
-SUNDOWNER is a fictional studio created for portfolio purposes. 
-All names, clients, projects and people are invented, and the name is not a registered business or trademark.
+**SUNDOWNER** Websites worth stopping for.
